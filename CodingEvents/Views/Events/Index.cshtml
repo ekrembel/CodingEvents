@@ -1,0 +1,16 @@
+﻿<h1>Coding Events</h1>
+<a asp-controller="Events" asp-action="Add">Add Event</a>
+
+@if (ViewBag.events.Count == 0)
+{
+    <p>No events yet!</p>
+}
+else
+{
+    @foreach (string item in ViewBag.events)
+    {
+        <ul>
+            <li>@item</li>
+        </ul>
+    }
+}

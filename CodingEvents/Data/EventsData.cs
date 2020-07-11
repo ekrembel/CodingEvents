@@ -32,6 +32,9 @@ namespace CodingEvents.Data
         {
             Events[editEvent.Id].Name = editEvent.Name;
             Events[editEvent.Id].Description = editEvent.Description;
+            Events[editEvent.Id].ContactEmail = editEvent.ContactEmail;
+            Events[editEvent.Id].Place = editEvent.Place;
+            Events[editEvent.Id].NumOfAttendees = editEvent.NumOfAttendees;
         }
     }
 }

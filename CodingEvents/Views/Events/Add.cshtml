@@ -6,17 +6,37 @@
 <h1>Add Event</h1>
 <form asp-controller="Events" asp-action="Add" method="post">
     <div class="form-group">
-        <input class="form-control" asp-for="Name" placeholder="event name" />
+        <label asp-for="Name"></label>
+        <input class="form-control" asp-for="Name" />
         <span asp-validation-for="Name"></span>
     </div>
     <div class="form-group">
-        <span><input class="form-control" asp-for="Description" placeholder="description" /></span>
-        
+        <label asp-for="Description"></label>
+        <input class="form-control" asp-for="Description" />
         <span asp-validation-for="Description"></span>
     </div>
     <div class="form-group">
-        <input class="form-control" asp-for="ContactEmail" placeholder="contact email" />
+        <label asp-for="ContactEmail">Contact Email</label>
+        <input class="form-control" asp-for="ContactEmail" />
         <span asp-validation-for="ContactEmail"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Place"></label>
+        <input class="form-control" asp-for="Place" />
+        <span asp-validation-for="Place"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="NumOfAttendees">Number of Attendees</label>
+        <input class="form-control" asp-for="NumOfAttendees" placeholder="number of attendees" />
+        <span asp-validation-for="NumOfAttendees"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="IsRegistrationRequired"> Is Registration Required?</label>
+        <select class="form-control" asp-for="IsRegistrationRequired">
+            <option value="false">False</option>
+            <option value="true">True</option>
+        </select>
+        <span asp-validation-for="IsRegistrationRequired"></span>
     </div>
     <input class="btn btn-primary" type="submit" value="Add Event" />
 

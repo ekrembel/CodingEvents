@@ -1,5 +1,8 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using CodingEvents.Models;
+using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace CodingEvents.ViewModels
 {
@@ -30,5 +33,28 @@ namespace CodingEvents.ViewModels
 
         
         public bool IsTrue { get { return true; } }
+
+        public List<SelectListItem> Categories { get; set; }
+
+        [Required(ErrorMessage = "Category is required.")]
+        public int CategoryId { get; set; }
+
+        public AddEventViewModel(List<EventCategory> categories)
+        {
+            Categories = new List<SelectListItem>();
+
+            foreach (var category in categories)
+            {
+                Categories.Add(
+                        new SelectListItem
+                        {
+                            Value = category.Id.ToString(),
+                            Text = category.Name
+                        }
+                    ) ;
+            }
+        }
+
+        public AddEventViewModel() { }
     }
 }

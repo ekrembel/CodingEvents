@@ -17,11 +17,9 @@ else
         <tr>
             <th>Id</th>
             <th>Event</th>
+            <th>Category</th>
             <th>Description</th>
-            <th>Contact</th>
-            <th>Place</th>
-            <th>Num of Attendees</th>
-            <th>Registration Required</th>
+
             <th>Edit</th>
             <th>
                 Remove
@@ -31,12 +29,9 @@ else
         {
             <tr>
                 <td>@item.Id</td>
-                <td>@item.Name</td>
+                <td><a asp-controller="Events" asp-action="Detail" asp-route-id="@item.Id">@item.Name</a></td>
+                <td>@item.Category.Name</td>
                 <td>@item.Description</td>
-                <td>@item.ContactEmail</td>
-                <td>@item.Place</td>
-                <td>@item.NumOfAttendees</td>
-                <td>@item.IsRegistrationRequired</td>
                 <td>
                     <form method="get" action="/events/edit">
                         <button class="btn btn-success" type="submit" name="eventId" value="@item.Id">Edit</button>

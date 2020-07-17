@@ -1,0 +1,41 @@
+﻿@model CodingEvents.ViewModels.EventDetailViewModel
+@{
+}
+
+
+
+<h1>@Model.Name</h1>
+
+<table class="table">
+    <tr>
+        <th>Description</th>
+        <td>@Model.Description</td>
+    </tr>
+    <tr>
+        <th>Contact Email</th>
+        <td>@Model.ContactEmail</td>
+    </tr>
+    <tr>
+        <th>Category</th>
+        <td>@Model.CategoryName</td>
+    </tr>
+    <tr>
+        <th>Place</th>
+        <td>@Model.Place</td>
+    </tr>
+    <tr>
+        <th>Number of Attendees</th>
+        <td>@Model.NumofAttendees</td>
+    </tr>
+    <tr>
+        <th>Is Registration Required?</th>
+        <td>@Model.IsRegistrationRequired</td>
+    </tr>
+    <tr>
+        <td>Tags</td>
+        <td>@Model.TagText</td>
+    </tr>
+
+</table>
+
+<a asp-controller="Tag" asp-action="AddEvent" asp-route-id="@Model.EventId">Add Tag</a>

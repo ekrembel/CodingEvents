@@ -1,4 +1,6 @@
 ﻿using System;
+using CodingEvents.ViewModels;
+
 namespace CodingEvents.Models
 {
     public class Event
@@ -6,19 +8,18 @@ namespace CodingEvents.Models
         public string Description { get; set; }
         public string Name { get; set; }
         public int Id { get; set; }
-        public static int nextId = 1;
         public string ContactEmail { get; set; }
         public string Place { get; set; }
         public int NumOfAttendees { get; set; }
         public bool IsRegistrationRequired { get; set; }
+        public int CategoryId { get; set; }
+        public EventCategory Category { get; set; }
 
         public Event()
         {
-            Id = nextId;
-            nextId++;
         }
 
-        public Event(string name, string description, string contactEmail, string place, int numOfAttendees, bool isRegistrationRequired) : this()
+        public Event(string name, string description, string contactEmail, string place, int numOfAttendees, bool isRegistrationRequired)
         {
             Name = name;
             Description = description;
@@ -26,7 +27,6 @@ namespace CodingEvents.Models
             Place = place;
             NumOfAttendees = numOfAttendees;
             IsRegistrationRequired = isRegistrationRequired;
-
         }
 
         public override string ToString()
